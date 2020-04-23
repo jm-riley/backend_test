@@ -8,7 +8,7 @@ const usersRouter = require("./routes/users");
 const { environment } = require("./config");
 
 const app = express();
-const client = environment === 'development' ? 'http://localhost:4000' : 'https://vanilla-bleater.herokuapp.com'
+const client = environment === 'development' ? 'http://localhost:4000' : 'http://vanilla-bleater.herokuapp.com'
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors({origin: client}));
