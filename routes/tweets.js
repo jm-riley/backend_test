@@ -15,7 +15,7 @@ router.get(
     const tweets = await Tweet.findAll({
       include: [{ model: User, as: "user", attributes: ["username"] }],
       order: [["createdAt", "DESC"]],
-      attributes: ["message"],
+      attributes: ["message", "id"]
     });
     res.json({ tweets });
   })
